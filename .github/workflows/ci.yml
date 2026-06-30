@@ -1,17 +1,13 @@
 # Project Beta — CI Pipeline
-#
-# Runs ROS simulation tests on PRs and main pushes.
-# Triggers doc-to-gitbook conversion when docs/ change on main.
+# Docs conversion is handled by docs.yml.
 
 name: CI
-
 on:
   push:
     branches: [main]
     paths:
       - src/**
       - tests/**
-      - docs/**
       - .github/workflows/ci.yml
   pull_request:
     paths:
@@ -24,7 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/franka/simulation/project-beta:latest
-    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
     env:
       SIM_HEADLESS: "true"
       SIM_ROBOT_MODEL: "panda"
@@ -41,13 +36,3 @@ jobs:
         with:
           name: test-report-beta
           path: /workspace/report.xml
-
-  docs:
-    needs: test
-    if: github.ref == 'refs/heads/main'
-    uses: ioto1/gbdemo_doc-converter/.github/workflows/docs-conversion.yml@main
-    with:
-      project-name: beta
-      source-dir: docs/
-    secrets:
-      deploy-key: ${{ secrets.GITBOOK_DEPLOY_KEY }}
