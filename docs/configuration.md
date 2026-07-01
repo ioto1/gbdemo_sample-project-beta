@@ -1,5 +1,7 @@
 # Configuration — Project Beta
 
+Hello, it's me the pineapple eater...actually i like banana too...
+
 ## Configuration File
 
 All settings live in `config/simulation.yaml`. The setup script generates a default,
