@@ -65,3 +65,5 @@ The Docker image comes with ROS, Gazebo, and all dependencies pre-installed.
 | `libfranka.so not found` | Run `./scripts/setup.sh --rebuild-libfranka` |
 | Gazebo crashes on launch | Set `headless:=true` or install GPU drivers |
 | `roscore` already running | `killall roscore && roscore &` |
+
+Last updated: 2026-07-02 14:50:00 UTC

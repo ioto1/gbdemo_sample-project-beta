@@ -45,3 +45,5 @@ Pre-built simulation scenes are in `worlds/`:
 
 See [Installation Guide](installation.md) for setting up headless simulation in
 GitLab CI runners with GPU acceleration.
+
+Last updated: 2026-07-02 14:50:00 UTC
