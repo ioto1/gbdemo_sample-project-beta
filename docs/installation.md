@@ -1,5 +1,7 @@
 # Installation — Project Beta
 
+Hello, it's me the pineapple eater...
+
 ## System Requirements
 
 | Component | Minimum | Recommended |
